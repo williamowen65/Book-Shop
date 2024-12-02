@@ -8,5 +8,6 @@ namespace Book_Shop.model
 {
     internal class Registration
     {
+
     }
 }
