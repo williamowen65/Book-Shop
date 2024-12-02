@@ -11,6 +11,16 @@ Each has it's own fun challenges. Luckily this assignment comes with some instru
 
 When testing this app there is an assumption that the SQL server is already setup and the program isn't responsible for creating/initializing the database for the bookstore. The SQL Server script is including if you wish to test out the project in whole. 
 
+Here are the steps for doing that:
+
+1. Open up SQL Server Management Studio (or other SQL Connection software)
+2. Connect to your SQL instance
+3. Open the [SQL Script]() in the program and run it.  
+4. Observe the new database. 
+5. Then run the Book Shop app
+
+---
+
 
 
 

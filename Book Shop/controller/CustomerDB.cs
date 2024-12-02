@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book_Shop.model
+namespace Book_Shop.controller
 {
     internal class CustomerDB
     {
