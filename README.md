@@ -1,5 +1,8 @@
 # Book Shop
 
-<br>
+This is a C# windows apps form which is integrated with a SQL Server Database.
 
-<embed src="./CPW 115 Final-1.pdf" type="application/pdf" width="100%" height="600px" />
+
+The project brings a few concepts together. CRUD database interactions, Class library logic, "Front-end development." 
+
+Each has it's own fun challenges. Luckily this assignment comes with some instructions you can [view here](./CPW-115_Final.pdf) if you'd like
