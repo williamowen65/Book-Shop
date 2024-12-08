@@ -68,11 +68,14 @@ namespace Book_Shop
 
             // Save registration to db
             BookRegistrationDB.RegisterBook(registration);
+            // clear the combobox selections 
+            cmboCustomer.SelectedIndex = -1;
+            cmboBook.SelectedIndex = -1;
 
         }
 
 
-    private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
