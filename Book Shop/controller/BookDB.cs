@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Book_Shop.model;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,22 @@ namespace Book_Shop.controller
             }
         }
 
-        public static List<Dictionary<string, object>> GetAllBooks()
+        //public static List<Dictionary<string, object>> GetAllBooks()
+         public static List<Book> GetAllBooks()
         {
             string query = "SELECT * FROM Book";
-            return DBHelper.Read(query);
+            List<Dictionary<string, object>> result = DBHelper.Read(query);
+            List<Book> books = new List<Book>();
+
+            foreach (var row in result)
+            {
+                string isbn = row["ISBN"].ToString();
+                string title = row["Title"].ToString();
+                decimal price = Convert.ToDecimal(row["Price"]);
+                books.Add(new Book(title, price, isbn));
+            }
+
+            return books;
         }
     }
 }

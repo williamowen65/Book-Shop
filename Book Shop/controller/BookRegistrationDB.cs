@@ -13,7 +13,7 @@ namespace Book_Shop.controller
         /// <summary>
         /// Saves a Book to the DB
         /// </summary>
-        public static void RegisterBook(Registration registration)
+        public static bool RegisterBook(Registration registration)
         {
 
             string query = "INSERT INTO Registration (CustomerID, ISBN, RegDate) VALUES (@customerID, @isbn, @regDate)";
@@ -28,6 +28,7 @@ namespace Book_Shop.controller
                     try {
                         command.ExecuteNonQuery();
                         MessageBox.Show($"Record logged in database:\n\n{registration}", "Book Registration");
+                        return true;
                     }
                     catch (Microsoft.Data.SqlClient.SqlException ex) {
                         // check for duplicate key error
@@ -42,6 +43,7 @@ namespace Book_Shop.controller
 
 
                     }
+                        return false;
                 }
             }
 

@@ -83,22 +83,21 @@ namespace Book_Shop
         private void App_Load(object sender, EventArgs e)
         {
             // Read all customers and books from the database
-            List<Dictionary<string, object>> allBooks = BookDB.GetAllBooks();
-            List<Dictionary<string, object>> allCustomers = CustomerDB.GetAllCustomers();
+            List<Book> allBooks = BookDB.GetAllBooks();
+            List<Customer> allCustomers = CustomerDB.GetAllCustomers();
 
 
             // Add customers to the combobox
             foreach (var customer in allCustomers)
             {
-                int id = Convert.ToInt32(customer["CustomerID"]);
-                cmboCustomer.Items.Add(new Customer(id, customer["Title"].ToString(), customer["FirstName"].ToString(), customer["LastName"].ToString(), customer["DateOfBirth"].ToString()));
+                cmboCustomer.Items.Add(customer);
             }
 
 
             // Add books to the combobox
-            foreach (var book in allBooks)
+            foreach (Book book in allBooks)
             {
-                cmboBook.Items.Add(new Book(book["Title"].ToString(), Convert.ToInt32(book["Price"]), book["ISBN"].ToString()));
+                cmboBook.Items.Add(book);
             }
         }
     }
