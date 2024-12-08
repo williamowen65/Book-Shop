@@ -49,5 +49,35 @@ namespace Book_Shop.controller
             }
         }
 
+        public static List<Dictionary<string, object>> Read(string query)
+        {
+            List<Dictionary<string, object>> results = new List<Dictionary<string, object>>();
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                //MessageBox.Show("Connection Opened \n" + query);
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Dictionary<string, object> row = new Dictionary<string, object>();
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                row[reader.GetName(i)] = reader.GetValue(i);
+                            }
+                            results.Add(row);
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
+
     }
 }

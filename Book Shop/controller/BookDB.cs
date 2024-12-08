@@ -24,5 +24,11 @@ namespace Book_Shop.controller
                 }
             }
         }
+
+        public static List<Dictionary<string, object>> ReadBooks()
+        {
+            string query = "SELECT * FROM Book";
+            return DBHelper.Read(query);
+        }
     }
 }

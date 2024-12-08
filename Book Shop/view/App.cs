@@ -1,3 +1,4 @@
+using Book_Shop.controller;
 using Book_Shop.model;
 using Book_Shop.view;
 
@@ -51,11 +52,17 @@ namespace Book_Shop
 
         private void App_Load(object sender, EventArgs e)
         {
-            // Add customers to the combobox
-             cmboCustomer.Items.Add(new Customer("Mr", "John", "Doe", "Jan 10, 1990"));
+            // Read all customers and books from the database
+            List<Dictionary<string, object>> allBooks = BookDB.ReadBooks();
 
-            // Add books to the combobox    
-             cmboBook.Items.Add(new Book("The Great Gatsby", 123, "123213"));
+            // Add customers to the combobox
+            cmboCustomer.Items.Add(new Customer("Mr", "John", "Doe", "Jan 10, 1990"));
+
+            // Add books to the combobox
+            foreach (var book in allBooks)
+            {
+                cmboBook.Items.Add(new Book(book["Title"].ToString(), Convert.ToInt32(book["Price"]), book["ISBN"].ToString()));
+            }
         }
     }
 }
