@@ -10,19 +10,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Book_Shop.controller;
+using Book_Shop.model;
 
 namespace Book_Shop.view
 {
     public partial class FormAddBook : Form
     {
-        public FormAddBook()
+        App mainApp;
+        public FormAddBook(App mainApp)
         {
             InitializeComponent();
+            this.mainApp = mainApp;
         }
 
         private void FormAddBook_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnCreateBook_Click(object sender, EventArgs e)
@@ -54,7 +57,15 @@ namespace Book_Shop.view
             string title = txtTitle.Text.Trim();
           
 
+
             BookDB.CreateBook(isbn, title, price);
+            // Add new book to DOM
+
+
+            
+
+            mainApp.cmboBook.Items.Add(new Book(title, price, isbn));
+
 
             MessageBox.Show("Book created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -65,6 +76,8 @@ namespace Book_Shop.view
 
             // focus first input
             txtISBN.Focus();
+
+
 
 
         }

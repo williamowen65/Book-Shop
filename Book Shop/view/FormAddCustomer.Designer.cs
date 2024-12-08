@@ -28,83 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtTitle = new TextBox();
             label4 = new Label();
-            txtPrice = new TextBox();
+            txtLastName = new TextBox();
             label2 = new Label();
-            txtISBN = new TextBox();
-            btnCreateBook = new Button();
+            txtFirstName = new TextBox();
+            btnCreateCustomer = new Button();
             lablel1 = new Label();
+            dobInput = new DateTimePicker();
+            txtTitle = new TextBox();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // txtTitle
-            // 
-            txtTitle.Location = new Point(204, 168);
-            txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(394, 47);
-            txtTitle.TabIndex = 13;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(18, 174);
+            label4.Location = new Point(24, 247);
             label4.Name = "label4";
             label4.Size = new Size(184, 41);
             label4.TabIndex = 12;
             label4.Text = "Date of Birth";
             // 
-            // txtPrice
+            // txtLastName
             // 
-            txtPrice.Location = new Point(204, 95);
-            txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(394, 47);
-            txtPrice.TabIndex = 11;
+            txtLastName.Location = new Point(210, 168);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(394, 47);
+            txtLastName.TabIndex = 11;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(18, 101);
+            label2.Location = new Point(24, 174);
             label2.Name = "label2";
             label2.Size = new Size(157, 41);
             label2.TabIndex = 10;
             label2.Text = "Last Name";
             // 
-            // txtISBN
+            // txtFirstName
             // 
-            txtISBN.Location = new Point(204, 22);
-            txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(394, 47);
-            txtISBN.TabIndex = 9;
+            txtFirstName.Location = new Point(210, 95);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(394, 47);
+            txtFirstName.TabIndex = 9;
             // 
-            // btnCreateBook
+            // btnCreateCustomer
             // 
-            btnCreateBook.Location = new Point(68, 242);
-            btnCreateBook.Name = "btnCreateBook";
-            btnCreateBook.Size = new Size(509, 58);
-            btnCreateBook.TabIndex = 8;
-            btnCreateBook.Text = "Add Customer to Store";
-            btnCreateBook.UseVisualStyleBackColor = true;
+            btnCreateCustomer.Location = new Point(74, 315);
+            btnCreateCustomer.Name = "btnCreateCustomer";
+            btnCreateCustomer.Size = new Size(509, 58);
+            btnCreateCustomer.TabIndex = 8;
+            btnCreateCustomer.Text = "Add Customer to Store";
+            btnCreateCustomer.UseVisualStyleBackColor = true;
+            btnCreateCustomer.Click += btnCreateCustomer_Click;
             // 
             // lablel1
             // 
             lablel1.AutoSize = true;
-            lablel1.Location = new Point(18, 28);
+            lablel1.Location = new Point(24, 101);
             lablel1.Name = "lablel1";
             lablel1.Size = new Size(160, 41);
             lablel1.TabIndex = 7;
             lablel1.Text = "First Name";
             // 
+            // dobInput
+            // 
+            dobInput.Format = DateTimePickerFormat.Short;
+            dobInput.Location = new Point(214, 241);
+            dobInput.Name = "dobInput";
+            dobInput.Size = new Size(390, 47);
+            dobInput.TabIndex = 13;
+            dobInput.Value = new DateTime(2024, 12, 8, 9, 3, 4, 0);
+            dobInput.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // txtTitle
+            // 
+            txtTitle.Location = new Point(214, 18);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(387, 47);
+            txtTitle.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(28, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(74, 41);
+            label1.TabIndex = 14;
+            label1.Text = "Title";
+            // 
             // FormAddCustomer
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(640, 329);
+            ClientSize = new Size(640, 410);
             Controls.Add(txtTitle);
+            Controls.Add(label1);
+            Controls.Add(dobInput);
             Controls.Add(label4);
-            Controls.Add(txtPrice);
+            Controls.Add(txtLastName);
             Controls.Add(label2);
-            Controls.Add(txtISBN);
-            Controls.Add(btnCreateBook);
+            Controls.Add(txtFirstName);
+            Controls.Add(btnCreateCustomer);
             Controls.Add(lablel1);
             Name = "FormAddCustomer";
             Text = "Add Customer";
@@ -115,13 +139,14 @@
         #endregion
 
         private Label label1;
-        private TextBox txtTitle;
         private Label label4;
-        private TextBox txtPrice;
+        private TextBox txtLastName;
         private Label label2;
-        private TextBox txtISBN;
-        private Button btnCreateBook;
+        private TextBox txtFirstName;
+        private Button btnCreateCustomer;
         private Label label3;
         private Label lablel1;
+        private DateTimePicker dobInput;
+        private TextBox txtTitle;
     }
 }

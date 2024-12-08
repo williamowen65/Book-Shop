@@ -147,11 +147,11 @@
         private Button btnAddCustomer;
         private Button btnOpenBookForm;
         private Label label1;
-        private ComboBox cmboCustomer;
-        private ComboBox cmboBook;
         private Label label2;
         private Label label3;
         private DateTimePicker dtpDate;
         private Button btnRegisterBook;
+        public ComboBox cmboCustomer;
+        public ComboBox cmboBook;
     }
 }

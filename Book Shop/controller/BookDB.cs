@@ -21,6 +21,7 @@ namespace Book_Shop.controller
                     command.Parameters.AddWithValue("@title", title);
                     command.Parameters.AddWithValue("@price", price);
                     command.ExecuteNonQuery();
+
                 }
             }
         }
