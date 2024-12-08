@@ -2,6 +2,7 @@ using Book_Shop.controller;
 using Book_Shop.model;
 using Book_Shop.view;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Book_Shop
 {
@@ -43,20 +44,35 @@ namespace Book_Shop
             Book? book = (Book)cmboBook.SelectedItem;
             string date = dtpDate.Value.ToString("yyyy-MM-dd");
 
-            // Show results in dialog
-            if (book != null)
+            // Validate fields
+            if (customer == null)
             {
-                string message = $"Book: {book.Title}\nDate: {date}\nChecked out to: {customer}";
-                MessageBox.Show(message, "Book Registration Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please select a customer.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+
+            if (book == null)
             {
-                MessageBox.Show("Please select a book.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a book.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            if (string.IsNullOrEmpty(date))
+            {
+                MessageBox.Show("Please select a date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Create new Registration
+            Registration registration = new Registration(customer, book);
+
+            // Save registration to db
+            BookRegistrationDB.RegisterBook(registration);
+
         }
 
 
-        private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
+    private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -64,14 +80,15 @@ namespace Book_Shop
         private void App_Load(object sender, EventArgs e)
         {
             // Read all customers and books from the database
-            List<Dictionary<string, object>> allBooks = BookDB.ReadBooks();
-            List<Dictionary<string, object>> allCustomers = CustomerDB.ReadCustomers();
+            List<Dictionary<string, object>> allBooks = BookDB.GetAllBooks();
+            List<Dictionary<string, object>> allCustomers = CustomerDB.GetAllCustomers();
 
 
             // Add customers to the combobox
             foreach (var customer in allCustomers)
             {
-                cmboCustomer.Items.Add(new Customer(customer["Title"].ToString(), customer["FirstName"].ToString(), customer["LastName"].ToString(), customer["DateOfBirth"].ToString()));
+                int id = Convert.ToInt32(customer["CustomerID"]);
+                cmboCustomer.Items.Add(new Customer(id, customer["Title"].ToString(), customer["FirstName"].ToString(), customer["LastName"].ToString(), customer["DateOfBirth"].ToString()));
             }
 
 

@@ -26,7 +26,7 @@ namespace Book_Shop.controller
             }
         }
 
-        public static List<Dictionary<string, object>> ReadBooks()
+        public static List<Dictionary<string, object>> GetAllBooks()
         {
             string query = "SELECT * FROM Book";
             return DBHelper.Read(query);

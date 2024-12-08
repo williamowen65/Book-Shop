@@ -8,14 +8,15 @@ namespace Book_Shop.model
 {
     internal class Customer
     {
-
+        public int CustomerID;
         string DateOfBirth;
         string FirstName;
         string LastName;
         string Title;
 
-        public Customer(string Title, string FirstName, string LastName, string DateOfBirth)
+        public Customer(int CustomerID, string Title, string FirstName, string LastName, string DateOfBirth)
         {
+            this.CustomerID = CustomerID;
             this.DateOfBirth = DateOfBirth;
             this.FirstName = FirstName;
             this.Title = Title;

@@ -30,8 +30,12 @@ namespace Book_Shop.view
 
             // Add customer to the database
             controller.CustomerDB.CreateCustomer(title, firstName, lastName, dateOfBirth);
+
+            // Get the Id of the newly created customer
+            int customerId = controller.CustomerDB.GetCustomerID(title, firstName, lastName, dateOfBirth);
+
             // Add Customer to DOM
-            mainApp.cmboCustomer.Items.Add(new Customer(title, firstName, lastName, dateOfBirth));
+            mainApp.cmboCustomer.Items.Add(new Customer(customerId ,title, firstName, lastName, dateOfBirth));
             // Select the newly created customer
             mainApp.cmboCustomer.SelectedIndex = mainApp.cmboCustomer.Items.Count - 1;
 

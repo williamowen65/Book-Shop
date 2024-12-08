@@ -28,10 +28,27 @@ namespace Book_Shop.controller
         }
 
         // Read all customers
-        public static List<Dictionary<string, object>> ReadCustomers()
+        public static List<Dictionary<string, object>> GetAllCustomers()
         {
             string query = "SELECT * FROM Customer";
             return DBHelper.Read(query);
+        }
+
+        public static int GetCustomerID(string title, string firstName, string lastName, string dateOfBirth)
+        {
+            string query = "SELECT CustomerID FROM Customer WHERE Title = @title AND FirstName = @firstName AND LastName = @lastName AND DateOfBirth = @dateOfBirth";
+            using (SqlConnection connection = DBHelper.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@title", title);
+                    command.Parameters.AddWithValue("@firstName", firstName);
+                    command.Parameters.AddWithValue("@lastName", lastName);
+                    command.Parameters.AddWithValue("@dateOfBirth", dateOfBirth);
+                    return (int)command.ExecuteScalar();
+                }
+            }
         }
     }
 }
