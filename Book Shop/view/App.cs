@@ -64,7 +64,7 @@ namespace Book_Shop
             }
 
             // Create new Registration
-            Registration registration = new Registration(customer, book);
+            Registration registration = new Registration(customer, book, date);
 
             // Save registration to db
             BookRegistrationDB.RegisterBook(registration);
