@@ -43,5 +43,19 @@ namespace Book_Shop
             MessageBox.Show("Customer: " + customer);
 
         }
+
+        private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void App_Load(object sender, EventArgs e)
+        {
+            // Add customers to the combobox
+             cmboCustomer.Items.Add(new Customer("Mr", "John", "Doe", "Jan 10, 1990"));
+
+            // Add books to the combobox    
+             cmboBook.Items.Add(new Book("The Great Gatsby", 123, "123213"));
+        }
     }
 }

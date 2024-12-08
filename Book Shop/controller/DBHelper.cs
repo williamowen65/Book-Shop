@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 /**
  * This class provides a way to interact with the database
  * An instance has it's own connection to the database
@@ -14,27 +14,40 @@ namespace Book_Shop.controller
 {
     internal class DBHelper
     {
-        private string connectionString;
 
-        public DBHelper(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
-
-        public SqlConnection GetConnection()
+        public static SqlConnection GetConnection()
         {
             try
             {
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                return connection;
+                return new SqlConnection("Data Source=DESKTOP-COPKNK8\\SQLEXPRESS;Initial Catalog=BookRegistration;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
             }
             catch (Exception ex)
             {
                 // Handle exceptions (e.g., log the error)
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Console.WriteLine("An error occurred in: " + ex.Message);
                 return null;
             }
         }
+
+
+        /// <summary>
+        /// Create: CRUD operations ( maybe call this OpenConnection() )
+        /// </summary>
+        /// <param name="query"></param>
+        public static void Create(string query)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                //MessageBox.Show("Connection Opened \n" + query);
+
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

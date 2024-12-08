@@ -1,3 +1,4 @@
+using Book_Shop.controller;
 namespace Book_Shop
 {
     internal static class Program
@@ -8,6 +9,7 @@ namespace Book_Shop
         [STAThread]
         static void Main()
         {
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

@@ -83,6 +83,7 @@
             cmboBook.Name = "cmboBook";
             cmboBook.Size = new Size(603, 49);
             cmboBook.TabIndex = 5;
+            cmboBook.SelectedIndexChanged += cmboBook_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -136,6 +137,7 @@
             Controls.Add(btnAddCustomer);
             Name = "App";
             Text = "Book Registration";
+            Load += App_Load;
             ResumeLayout(false);
             PerformLayout();
         }

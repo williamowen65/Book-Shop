@@ -48,7 +48,7 @@
             // 
             // btnCreateBook
             // 
-            btnCreateBook.Location = new Point(90, 257);
+            btnCreateBook.Location = new Point(69, 248);
             btnCreateBook.Name = "btnCreateBook";
             btnCreateBook.Size = new Size(509, 58);
             btnCreateBook.TabIndex = 1;
@@ -81,7 +81,7 @@
             // 
             // txtTitle
             // 
-            txtTitle.Location = new Point(226, 183);
+            txtTitle.Location = new Point(226, 174);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(394, 47);
             txtTitle.TabIndex = 6;
@@ -89,7 +89,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(50, 189);
+            label4.Location = new Point(50, 180);
             label4.Name = "label4";
             label4.Size = new Size(74, 41);
             label4.TabIndex = 5;
@@ -97,9 +97,10 @@
             // 
             // FormAddBook
             // 
+            AcceptButton = btnCreateBook;
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(693, 343);
+            ClientSize = new Size(680, 328);
             Controls.Add(txtTitle);
             Controls.Add(label4);
             Controls.Add(txtPrice);
