@@ -1,6 +1,6 @@
 # Book Shop
 
-![alt text](<Book Registration (Windows Forms + SQL Server)-1.gif>)
+<img src="Book Registration (Windows Forms + SQL Server)-1.gif" alt="Book Registration" width="500px" style="margin:auto; display:block"/>
 
 This is a simple Windows Forms app which integrates with a local SQL Server backend.
 
