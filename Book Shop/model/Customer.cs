@@ -12,7 +12,7 @@ namespace Book_Shop.model
         string DateOfBirth;
         string FirstName;
         string LastName;
-        string Title;
+        string Title; // This field was added to match the db schema
 
         public Customer(int CustomerID, string Title, string FirstName, string LastName, string DateOfBirth)
         {
