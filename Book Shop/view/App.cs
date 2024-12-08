@@ -1,6 +1,7 @@
 using Book_Shop.controller;
 using Book_Shop.model;
 using Book_Shop.view;
+using System.Windows.Forms;
 
 namespace Book_Shop
 {
@@ -34,16 +35,26 @@ namespace Book_Shop
 
         }
 
+
         private void btnRegisterBook_Click(object sender, EventArgs e)
         {
-
             // Get values from form
             Customer? customer = (Customer)cmboCustomer.SelectedItem;
+            Book? book = (Book)cmboBook.SelectedItem;
+            string date = dtpDate.Value.ToString("yyyy-MM-dd");
 
             // Show results in dialog
-            MessageBox.Show("Customer: " + customer);
-
+            if (book != null)
+            {
+                string message = $"Book: {book.Title}\nDate: {date}\nChecked out to: {customer}";
+                MessageBox.Show(message, "Book Registration Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please select a book.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void cmboBook_SelectedIndexChanged(object sender, EventArgs e)
         {
