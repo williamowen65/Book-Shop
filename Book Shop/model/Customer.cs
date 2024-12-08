@@ -24,7 +24,7 @@ namespace Book_Shop.model
 
         public override string ToString()
         {
-            return $"{Title} {FirstName} {LastName}, born on {DateOfBirth}";
+            return $"{Title} {FirstName} {LastName}";
         }
     }
 }

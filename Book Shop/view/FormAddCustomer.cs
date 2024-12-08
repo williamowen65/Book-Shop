@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Book_Shop.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,8 @@ namespace Book_Shop.view
 {
     public partial class FormAddCustomer : Form
     {
-        Form mainApp;
-        public FormAddCustomer(Form mainApp)
+        App mainApp;
+        public FormAddCustomer(App mainApp)
         {
             this.mainApp = mainApp;
             InitializeComponent();
@@ -29,6 +30,10 @@ namespace Book_Shop.view
 
             // Add customer to the database
             controller.CustomerDB.CreateCustomer(title, firstName, lastName, dateOfBirth);
+            // Add Customer to DOM
+            mainApp.cmboCustomer.Items.Add(new Customer(title, firstName, lastName, dateOfBirth));
+            // Select the newly created customer
+            mainApp.cmboCustomer.SelectedIndex = mainApp.cmboCustomer.Items.Count - 1;
 
             // Show success message
             MessageBox.Show("Customer created successfully");

@@ -44,7 +44,7 @@
             btnAddCustomer.Location = new Point(738, 33);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(523, 226);
-            btnAddCustomer.TabIndex = 0;
+            btnAddCustomer.TabIndex = 5;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += btnAddCustomer_Click;
@@ -54,7 +54,7 @@
             btnOpenBookForm.Location = new Point(738, 330);
             btnOpenBookForm.Name = "btnOpenBookForm";
             btnOpenBookForm.Size = new Size(523, 226);
-            btnOpenBookForm.TabIndex = 1;
+            btnOpenBookForm.TabIndex = 6;
             btnOpenBookForm.Text = "Add Book";
             btnOpenBookForm.UseVisualStyleBackColor = true;
             btnOpenBookForm.Click += btnOpenBookForm_Click;
@@ -70,19 +70,22 @@
             // 
             // cmboCustomer
             // 
+            cmboCustomer.BackColor = SystemColors.HighlightText;
+            cmboCustomer.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboCustomer.FormattingEnabled = true;
             cmboCustomer.Location = new Point(29, 77);
             cmboCustomer.Name = "cmboCustomer";
             cmboCustomer.Size = new Size(603, 49);
-            cmboCustomer.TabIndex = 3;
+            cmboCustomer.TabIndex = 1;
             // 
             // cmboBook
             // 
+            cmboBook.DropDownStyle = ComboBoxStyle.DropDownList;
             cmboBook.FormattingEnabled = true;
             cmboBook.Location = new Point(29, 187);
             cmboBook.Name = "cmboBook";
             cmboBook.Size = new Size(603, 49);
-            cmboBook.TabIndex = 5;
+            cmboBook.TabIndex = 2;
             cmboBook.SelectedIndexChanged += cmboBook_SelectedIndexChanged;
             // 
             // label2
@@ -108,7 +111,7 @@
             dtpDate.Location = new Point(29, 310);
             dtpDate.Name = "dtpDate";
             dtpDate.Size = new Size(603, 47);
-            dtpDate.TabIndex = 7;
+            dtpDate.TabIndex = 3;
             dtpDate.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // btnRegisterBook
@@ -116,13 +119,14 @@
             btnRegisterBook.Location = new Point(29, 383);
             btnRegisterBook.Name = "btnRegisterBook";
             btnRegisterBook.Size = new Size(603, 173);
-            btnRegisterBook.TabIndex = 8;
+            btnRegisterBook.TabIndex = 4;
             btnRegisterBook.Text = "Register Book";
             btnRegisterBook.UseVisualStyleBackColor = true;
             btnRegisterBook.Click += btnRegisterBook_Click;
             // 
             // App
             // 
+            AcceptButton = btnRegisterBook;
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1274, 573);

@@ -51,7 +51,7 @@
             btnCreateBook.Location = new Point(69, 248);
             btnCreateBook.Name = "btnCreateBook";
             btnCreateBook.Size = new Size(509, 58);
-            btnCreateBook.TabIndex = 1;
+            btnCreateBook.TabIndex = 4;
             btnCreateBook.Text = "Add book to store inventory";
             btnCreateBook.UseVisualStyleBackColor = true;
             btnCreateBook.Click += btnCreateBook_Click;
@@ -61,14 +61,14 @@
             txtISBN.Location = new Point(226, 37);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(394, 47);
-            txtISBN.TabIndex = 2;
+            txtISBN.TabIndex = 1;
             // 
             // txtPrice
             // 
             txtPrice.Location = new Point(226, 110);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(394, 47);
-            txtPrice.TabIndex = 4;
+            txtPrice.TabIndex = 2;
             // 
             // label2
             // 
@@ -84,7 +84,7 @@
             txtTitle.Location = new Point(226, 174);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(394, 47);
-            txtTitle.TabIndex = 6;
+            txtTitle.TabIndex = 3;
             // 
             // label4
             // 

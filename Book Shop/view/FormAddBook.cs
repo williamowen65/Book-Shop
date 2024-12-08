@@ -58,14 +58,12 @@ namespace Book_Shop.view
           
 
 
+            // Save the book in the Database
             BookDB.CreateBook(isbn, title, price);
             // Add new book to DOM
-
-
-            
-
             mainApp.cmboBook.Items.Add(new Book(title, price, isbn));
-
+            // Select the book automatically
+            mainApp.cmboBook.SelectedIndex = mainApp.cmboBook.SelectedIndex = mainApp.cmboBook.Items.Count - 1;
 
             MessageBox.Show("Book created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

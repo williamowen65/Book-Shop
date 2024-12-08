@@ -53,7 +53,7 @@
             txtLastName.Location = new Point(210, 168);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(394, 47);
-            txtLastName.TabIndex = 11;
+            txtLastName.TabIndex = 3;
             // 
             // label2
             // 
@@ -69,14 +69,14 @@
             txtFirstName.Location = new Point(210, 95);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(394, 47);
-            txtFirstName.TabIndex = 9;
+            txtFirstName.TabIndex = 2;
             // 
             // btnCreateCustomer
             // 
             btnCreateCustomer.Location = new Point(74, 315);
             btnCreateCustomer.Name = "btnCreateCustomer";
             btnCreateCustomer.Size = new Size(509, 58);
-            btnCreateCustomer.TabIndex = 8;
+            btnCreateCustomer.TabIndex = 5;
             btnCreateCustomer.Text = "Add Customer to Store";
             btnCreateCustomer.UseVisualStyleBackColor = true;
             btnCreateCustomer.Click += btnCreateCustomer_Click;
@@ -96,7 +96,7 @@
             dobInput.Location = new Point(214, 241);
             dobInput.Name = "dobInput";
             dobInput.Size = new Size(390, 47);
-            dobInput.TabIndex = 13;
+            dobInput.TabIndex = 4;
             dobInput.Value = new DateTime(2024, 12, 8, 9, 3, 4, 0);
             dobInput.ValueChanged += dateTimePicker1_ValueChanged;
             // 
@@ -105,7 +105,7 @@
             txtTitle.Location = new Point(214, 18);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(387, 47);
-            txtTitle.TabIndex = 15;
+            txtTitle.TabIndex = 1;
             // 
             // label1
             // 
@@ -118,6 +118,7 @@
             // 
             // FormAddCustomer
             // 
+            AcceptButton = btnCreateCustomer;
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(640, 410);
